@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<!-- * @category    Samumaretiya
+ * @package     Samumaretiya_Productorderlimit
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+-->
+<config>
+    <tabs>
+        <productorderlimit translate="label" module="samumaretiya_productorderlimit">
+            <label>Per Day product Order Limit</label>
+            <sort_order>200</sort_order>
+        </productorderlimit>
+    </tabs>
+    <sections>
+    	<productorderlimit translate="label" module="samumaretiya_productorderlimit">
+    		<class>separator-top</class>
+            <label>Manage product Order Limit</label>
+            <tab>productorderlimit</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>1</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <orderlimitgroups translate="label">
+                    <label>Per Day Product Order Limit</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <active translate="label">
+                            <label>Enabled</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </active>
+                        <globalproductlimit translate="label">
+                            <label>Apply Global Product Limit To Each Product</label>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>2</sort_order>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </globalproductlimit>
+                        <allowproductqty>
+                            <depends>
+                                <globalproductlimit>1</globalproductlimit>
+                            </depends>
+                        </allowproductqty>
+                        <allowproductqty translate="label">
+                            <label>Quantity Limit For Each Individual Product</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </allowproductqty>
+                        <globaldaterangelimit translate="label">
+                            <label>Apply Global Date Range Limit To Each Product</label>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>4</sort_order>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </globaldaterangelimit>
+                        <globalfromdate>
+                            <depends>
+                                <globaldaterangelimit>1</globaldaterangelimit>
+                            </depends>
+                        </globalfromdate>
+                        <globaltodate>
+                            <depends>
+                                <globaldaterangelimit>1</globaldaterangelimit>
+                            </depends>
+                        </globaltodate>
+                        <globalfromdate translate="label">
+                            <label>Active From</label>
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>samumaretiya_productorderlimit/adminhtml_system_config_date</frontend_model>
+                            <validate>required-entry</validate> 
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </globalfromdate> 
+                        <globaltodate translate="label">
+                            <label>To</label>
+                            <frontend_type>text</frontend_type>
+                    <frontend_model>samumaretiya_productorderlimit/adminhtml_system_config_date</frontend_model>
+                            <validate>required-entry</validate>
+                            <sort_order>6</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </globaltodate>
+                    </fields>
+                </orderlimitgroups>
+                <orderlimitcmsgroups>
+                    <label>Per Day Product Contant Management</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>2</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                            <orderlimiticon translate="label">
+                            <label>Product icon</label>
+                            <frontend_type>image</frontend_type>
+            <backend_model>productorderlimit/system_config_backend_image_orderlimiticon</backend_model>
+                            <base_url type="media" scope_info="1">theme</base_url>
+                            <sort_order>7</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment>Allowed file types: ICO, PNG, GIF, JPEG, APNG, SVG. Not all browsers support all these formats!</comment>
+                        </orderlimiticon> 
+                    </fields>
+                </orderlimitcmsgroups>
+            </groups>
+    	</productorderlimit>
+    </sections>
+</config>

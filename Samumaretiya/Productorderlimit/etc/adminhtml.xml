@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!-- * @category    Samumaretiya
+ * @package     Samumaretiya_Productorderlimit
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+-->
+<config>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <productorderlimit translate="label" module="samumaretiya_productorderlimit">
+                                        <title>Per Day product Order Limit</title>
+                                        <sort_order>0</sort_order>
+                                    </productorderlimit>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>
